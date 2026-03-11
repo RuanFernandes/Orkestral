@@ -1,0 +1,173 @@
+{
+  "appName": "Orkestral",
+  "appDescription": "Visual orchestration for Docker Compose",
+  "addService": "Add Service",
+  "addNetwork": "Add Network",
+  "addComment": "Add Comment",
+  "saveWorkflow": "Save Workflow",
+  "loadWorkflow": "Load Workflow",
+  "toggleYaml": "Toggle YAML",
+  "clearAll": "Clear All",
+  "clearAllConfirm": "Clear all services, networks, and comments? This action cannot be undone.",
+  "load": "Load",
+  "workflowDownloaded": "orkestral-workflow.json downloaded",
+  "canvasRestored": "Canvas restored successfully",
+  "errorParsingWorkflow": "Failed to parse workflow file",
+  "yes": "Yes",
+  "no": "No",
+  "cancel": "Cancel",
+  "save": "Save",
+  "close": "Close",
+  "edit": "Edit",
+  "delete": "Delete",
+  "duplicate": "Duplicate",
+  "copy": "Copy",
+  "download": "Download",
+  "import": "Import",
+  "export": "Export",
+
+  "serviceName": "Service Name",
+  "image": "Image",
+  "ports": "Ports",
+  "networks": "Networks",
+  "environment": "Environment Variables",
+  "volumes": "Volumes",
+  "dependsOn": "Depends On",
+  "restart": "Restart Policy",
+  "command": "Command",
+  "containerName": "Container Name",
+
+  "networkName": "Network Name",
+  "networkDriver": "Driver",
+  "networkExternal": "External Network",
+
+  "commentText": "Comment Text",
+  "addNote": "Add Note",
+  "newNote": "New note...",
+  "note": "Note",
+  "deleteComment": "Delete this comment?",
+  "typeNoteHere": "Type your note here...",
+  "clickToEdit": "Click to edit...",
+
+  "editService": "Edit Service",
+  "saveChanges": "Save Changes",
+  "addPort": "Add port",
+  "removePort": "Remove port",
+  "addNetworkLabel": "Add network",
+  "removeNetwork": "Remove network",
+  "addVolume": "Add volume",
+  "removeVolume": "Remove volume",
+  "addEnvironmentVariable": "Add environment variable",
+  "removeEnvironmentVariable": "Remove environment variable",
+  "useExistingNetwork": "Use an existing external network",
+  "addServiceFromTemplate": "Add Service from Template",
+  "serviceAdded": "Added",
+  "deleteServiceConfirm": "Delete service \"{name}\"?",
+  "deleteNetworkConfirm": "Delete network \"{name}\"?",
+  "editServiceLabel": "Edit service",
+  "duplicateService": "Duplicate service",
+  "deleteServiceLabel": "Delete service",
+  "networkCount": "network(s)",
+  "volumeCount": "volume(s)",
+  "envVarCount": "env var(s)",
+  "dependencyCount": "dependency(s)",
+  "deleteNetworkSimple": "Delete this network?",
+  "driver": "Driver",
+  "external": "External",
+
+  "general": "General",
+  "networking": "Networking",
+  "storage": "Storage",
+  "advanced": "Advanced",
+
+  "selectTemplate": "Select Template",
+  "serviceTemplates": "Service Templates",
+  "noServices": "No services",
+  "noServicesDescription": "Start by adding a service to the canvas",
+
+  "yamlPreview": "YAML Preview",
+  "copyToClipboard": "Copy to Clipboard",
+  "copiedToClipboard": "Copied!",
+  "failedToCopy": "Failed to copy",
+  "downloadYaml": "Download docker-compose.yml",
+  "downloadedYaml": "docker-compose.yml downloaded",
+  "importYaml": "Import YAML",
+  "copyYaml": "Copy YAML",
+  "selectYamlFile": "Select a YAML file",
+  "importedServices": "service(s) imported",
+  "noServicesFound": "No services found in file",
+
+  "workflowSaved": "Workflow saved successfully",
+  "workflowLoaded": "Workflow loaded successfully",
+  "errorLoadingWorkflow": "Error loading workflow",
+  "errorSavingWorkflow": "Error saving workflow",
+
+  "autoSave": "Auto Save",
+  "autoSaveEnabled": "Auto save enabled",
+  "autoSaveDisabled": "Auto save disabled",
+
+  "nodeTypes": {
+    "service": "Service",
+    "network": "Network",
+    "comment": "Comment"
+  },
+
+  "templates": {
+    "nodejs": {
+      "name": "Node.js",
+      "description": "Node.js application with development environment"
+    },
+    "postgres": {
+      "name": "PostgreSQL",
+      "description": "PostgreSQL database"
+    },
+    "redis": {
+      "name": "Redis",
+      "description": "Redis in-memory cache"
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "description": "MongoDB NoSQL database"
+    },
+    "mysql": {
+      "name": "MySQL",
+      "description": "MySQL database"
+    },
+    "nginx": {
+      "name": "Nginx",
+      "description": "Nginx web server and reverse proxy"
+    }
+  },
+
+  "placeholders": {
+    "serviceName": "my-service",
+    "image": "nginx:latest",
+    "port": "8080:80",
+    "volume": "/host/path:/container/path",
+    "envKey": "KEY",
+    "envValue": "value",
+    "networkName": "my-network",
+    "command": "npm start",
+    "containerName": "my-container",
+    "commentText": "Type your note here..."
+  },
+
+  "validation": {
+    "required": "Required field",
+    "invalidFormat": "Invalid format",
+    "duplicateName": "Name already exists"
+  },
+
+  "info": {
+    "dependencyCount": "{{count}} dependency",
+    "dependencyCount_plural": "{{count}} dependencies",
+    "portCount": "{{count}} port",
+    "portCount_plural": "{{count}} ports",
+    "volumeCount": "{{count}} volume",
+    "volumeCount_plural": "{{count}} volumes",
+    "envCount": "{{count}} variable",
+    "envCount_plural": "{{count}} variables",
+    "networkCount": "{{count}} network",
+    "networkCount_plural": "{{count}} networks"
+  }
+}

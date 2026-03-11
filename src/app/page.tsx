@@ -1,66 +1,64 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import { Box, Grid, GridItem } from "@chakra-ui/react";
+import { ReactFlowProvider } from "reactflow";
+import { useEffect } from "react";
+import { Header } from "@/components/Header";
+import { Canvas } from "@/components/Canvas";
+import { YamlViewer } from "@/components/YamlViewer";
+import { ServiceEditor } from "@/components/ServiceEditor";
+import { useComposeStore } from "@/store/composeStore";
+import { loadWorkflowFromLocalStorage } from "@/lib/workflowUtils";
 
 export default function Home() {
+  const { yamlPanelOpen, loadWorkflow, autoSaveEnabled } = useComposeStore();
+
+  // carrega automaticamente o workflow salvo se o auto-save tá ligado
+  useEffect(() => {
+    const savedWorkflow = loadWorkflowFromLocalStorage();
+    if (savedWorkflow && autoSaveEnabled) {
+      loadWorkflow(savedWorkflow);
+    }
+  }, [loadWorkflow, autoSaveEnabled]);
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+    <Box h="100vh" display="flex" flexDirection="column" bg="#0f172a">
+      <Header />
+
+      <Box flex={1} overflow="hidden">
+        <Grid
+          h="full"
+          templateColumns={
+            yamlPanelOpen
+              ? {
+                  base: "1fr",
+                  md: "1fr",
+                  lg: "1fr 500px",
+                  xl: "1fr 600px",
+                }
+              : "1fr"
+          }
+          transition="all 0.3s"
+        >
+          <GridItem
+            h="full"
+            overflow="hidden"
+            display={{ base: yamlPanelOpen ? "none" : "block", lg: "block" }}
           >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            <ReactFlowProvider>
+              <Canvas />
+            </ReactFlowProvider>
+          </GridItem>
+
+          {yamlPanelOpen && (
+            <GridItem h="full" overflow="hidden">
+              <YamlViewer />
+            </GridItem>
+          )}
+        </Grid>
+      </Box>
+
+      <ServiceEditor />
+    </Box>
   );
 }

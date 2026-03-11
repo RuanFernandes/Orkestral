@@ -1,0 +1,173 @@
+{
+  "appName": "Orkestral",
+  "appDescription": "Orquestração visual para Docker Compose",
+  "addService": "Adicionar Serviço",
+  "addNetwork": "Adicionar Rede",
+  "addComment": "Adicionar Comentário",
+  "saveWorkflow": "Salvar Workflow",
+  "loadWorkflow": "Carregar Workflow",
+  "toggleYaml": "Alternar YAML",
+  "clearAll": "Limpar Tudo",
+  "clearAllConfirm": "Limpar todos os serviços, redes e comentários? Esta ação não pode ser desfeita.",
+  "load": "Carregar",
+  "workflowDownloaded": "orkestral-workflow.json baixado",
+  "canvasRestored": "Canvas restaurado com sucesso",
+  "errorParsingWorkflow": "Falha ao analisar arquivo do workflow",
+  "yes": "Sim",
+  "no": "Não",
+  "cancel": "Cancelar",
+  "save": "Salvar",
+  "close": "Fechar",
+  "edit": "Editar",
+  "delete": "Excluir",
+  "duplicate": "Duplicar",
+  "copy": "Copiar",
+  "download": "Baixar",
+  "import": "Importar",
+  "export": "Exportar",
+
+  "serviceName": "Nome do Serviço",
+  "image": "Imagem",
+  "ports": "Portas",
+  "networks": "Redes",
+  "environment": "Variáveis de Ambiente",
+  "volumes": "Volumes",
+  "dependsOn": "Depende De",
+  "restart": "Política de Reinício",
+  "command": "Comando",
+  "containerName": "Nome do Container",
+
+  "networkName": "Nome da Rede",
+  "networkDriver": "Driver",
+  "networkExternal": "Rede Externa",
+
+  "commentText": "Texto do Comentário",
+  "addNote": "Adicionar Nota",
+  "newNote": "Nova nota...",
+  "note": "Nota",
+  "deleteComment": "Excluir este comentário?",
+  "typeNoteHere": "Digite sua nota aqui...",
+  "clickToEdit": "Clique para editar...",
+
+  "editService": "Editar Serviço",
+  "saveChanges": "Salvar Alterações",
+  "addPort": "Adicionar porta",
+  "removePort": "Remover porta",
+  "addNetworkLabel": "Adicionar rede",
+  "removeNetwork": "Remover rede",
+  "addVolume": "Adicionar volume",
+  "removeVolume": "Remover volume",
+  "addEnvironmentVariable": "Adicionar variável de ambiente",
+  "removeEnvironmentVariable": "Remover variável de ambiente",
+  "useExistingNetwork": "Usar uma rede externa existente",
+  "addServiceFromTemplate": "Adicionar Serviço de Template",
+  "serviceAdded": "Adicionado",
+  "deleteServiceConfirm": "Excluir serviço \"{name}\"?",
+  "deleteNetworkConfirm": "Excluir rede \"{name}\"?",
+  "editServiceLabel": "Editar serviço",
+  "duplicateService": "Duplicar serviço",
+  "deleteServiceLabel": "Excluir serviço",
+  "networkCount": "rede(s)",
+  "volumeCount": "volume(s)",
+  "envVarCount": "var. amb.",
+  "dependencyCount": "dependência(s)",
+  "deleteNetworkSimple": "Excluir esta rede?",
+  "driver": "Driver",
+  "external": "Externa",
+
+  "general": "Geral",
+  "networking": "Rede",
+  "storage": "Armazenamento",
+  "advanced": "Avançado",
+
+  "selectTemplate": "Selecionar Template",
+  "serviceTemplates": "Templates de Serviço",
+  "noServices": "Sem serviços",
+  "noServicesDescription": "Comece adicionando um serviço ao canvas",
+
+  "yamlPreview": "Visualização YAML",
+  "copyToClipboard": "Copiar para Área de Transferência",
+  "copiedToClipboard": "Copiado!",
+  "failedToCopy": "Falha ao copiar",
+  "downloadYaml": "Baixar docker-compose.yml",
+  "downloadedYaml": "docker-compose.yml baixado",
+  "importYaml": "Importar YAML",
+  "copyYaml": "Copiar YAML",
+  "selectYamlFile": "Selecione um arquivo YAML",
+  "importedServices": "serviço(s) importado(s)",
+  "noServicesFound": "Nenhum serviço encontrado no arquivo",
+
+  "workflowSaved": "Workflow salvo com sucesso",
+  "workflowLoaded": "Workflow carregado com sucesso",
+  "errorLoadingWorkflow": "Erro ao carregar workflow",
+  "errorSavingWorkflow": "Erro ao salvar workflow",
+
+  "autoSave": "Salvamento Automático",
+  "autoSaveEnabled": "Salvamento automático ativado",
+  "autoSaveDisabled": "Salvamento automático desativado",
+
+  "nodeTypes": {
+    "service": "Serviço",
+    "network": "Rede",
+    "comment": "Comentário"
+  },
+
+  "templates": {
+    "nodejs": {
+      "name": "Node.js",
+      "description": "Aplicação Node.js com ambiente de desenvolvimento"
+    },
+    "postgres": {
+      "name": "PostgreSQL",
+      "description": "Banco de dados PostgreSQL"
+    },
+    "redis": {
+      "name": "Redis",
+      "description": "Cache em memória Redis"
+    },
+    "mongodb": {
+      "name": "MongoDB",
+      "description": "Banco de dados NoSQL MongoDB"
+    },
+    "mysql": {
+      "name": "MySQL",
+      "description": "Banco de dados MySQL"
+    },
+    "nginx": {
+      "name": "Nginx",
+      "description": "Servidor web e proxy reverso Nginx"
+    }
+  },
+
+  "placeholders": {
+    "serviceName": "meu-servico",
+    "image": "nginx:latest",
+    "port": "8080:80",
+    "volume": "/caminho/host:/caminho/container",
+    "envKey": "CHAVE",
+    "envValue": "valor",
+    "networkName": "minha-rede",
+    "command": "npm start",
+    "containerName": "meu-container",
+    "commentText": "Digite sua nota aqui..."
+  },
+
+  "validation": {
+    "required": "Campo obrigatório",
+    "invalidFormat": "Formato inválido",
+    "duplicateName": "Nome já existe"
+  },
+
+  "info": {
+    "dependencyCount": "{{count}} dependência",
+    "dependencyCount_plural": "{{count}} dependências",
+    "portCount": "{{count}} porta",
+    "portCount_plural": "{{count}} portas",
+    "volumeCount": "{{count}} volume",
+    "volumeCount_plural": "{{count}} volumes",
+    "envCount": "{{count}} variável",
+    "envCount_plural": "{{count}} variáveis",
+    "networkCount": "{{count}} rede",
+    "networkCount_plural": "{{count}} redes"
+  }
+}

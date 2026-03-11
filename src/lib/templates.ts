@@ -1,0 +1,103 @@
+import { ServiceTemplate } from '@/types/compose';
+
+export const serviceTemplates: ServiceTemplate[] = [
+  {
+    id: 'nodejs',
+    name: 'Node.js',
+    icon: 'Box',
+    description: 'Node.js application server',
+    config: {
+      name: 'app',
+      image: 'node:20-alpine',
+      ports: ['3000:3000'],
+      environment: {
+        NODE_ENV: 'production',
+      },
+      volumes: ['./:/app', '/app/node_modules'],
+      command: 'npm start',
+      restart: 'unless-stopped',
+    },
+  },
+  {
+    id: 'postgresql',
+    name: 'PostgreSQL',
+    icon: 'Database',
+    description: 'PostgreSQL database server',
+    config: {
+      name: 'postgres',
+      image: 'postgres:16-alpine',
+      ports: ['5432:5432'],
+      environment: {
+        POSTGRES_USER: 'postgres',
+        POSTGRES_PASSWORD: 'postgres',
+        POSTGRES_DB: 'mydb',
+      },
+      volumes: ['postgres_data:/var/lib/postgresql/data'],
+      restart: 'unless-stopped',
+    },
+  },
+  {
+    id: 'redis',
+    name: 'Redis',
+    icon: 'Database',
+    description: 'Redis cache server',
+    config: {
+      name: 'redis',
+      image: 'redis:7-alpine',
+      ports: ['6379:6379'],
+      environment: {},
+      volumes: ['redis_data:/data'],
+      restart: 'unless-stopped',
+    },
+  },
+  {
+    id: 'mongodb',
+    name: 'MongoDB',
+    icon: 'Database',
+    description: 'MongoDB NoSQL database',
+    config: {
+      name: 'mongodb',
+      image: 'mongo:7',
+      ports: ['27017:27017'],
+      environment: {
+        MONGO_INITDB_ROOT_USERNAME: 'root',
+        MONGO_INITDB_ROOT_PASSWORD: 'root',
+      },
+      volumes: ['mongo_data:/data/db'],
+      restart: 'unless-stopped',
+    },
+  },
+  {
+    id: 'mysql',
+    name: 'MySQL',
+    icon: 'Database',
+    description: 'MySQL database server',
+    config: {
+      name: 'mysql',
+      image: 'mysql:8',
+      ports: ['3306:3306'],
+      environment: {
+        MYSQL_ROOT_PASSWORD: 'root',
+        MYSQL_DATABASE: 'mydb',
+        MYSQL_USER: 'user',
+        MYSQL_PASSWORD: 'password',
+      },
+      volumes: ['mysql_data:/var/lib/mysql'],
+      restart: 'unless-stopped',
+    },
+  },
+  {
+    id: 'nginx',
+    name: 'Nginx',
+    icon: 'Server',
+    description: 'Nginx web server',
+    config: {
+      name: 'nginx',
+      image: 'nginx:alpine',
+      ports: ['80:80', '443:443'],
+      environment: {},
+      volumes: ['./nginx.conf:/etc/nginx/nginx.conf:ro', './html:/usr/share/nginx/html:ro'],
+      restart: 'unless-stopped',
+    },
+  },
+];
