@@ -2,6 +2,20 @@ import { ServiceTemplate } from '@/types/compose';
 
 export const serviceTemplates: ServiceTemplate[] = [
   {
+    id: 'custom',
+    name: 'Custom',
+    icon: 'Box',
+    description: 'Empty service template',
+    config: {
+      name: 'service',
+      image: '',
+      ports: [],
+      environment: {},
+      volumes: [],
+      restart: 'unless-stopped',
+    },
+  },
+  {
     id: 'nodejs',
     name: 'Node.js',
     icon: 'Box',
@@ -47,23 +61,6 @@ export const serviceTemplates: ServiceTemplate[] = [
       ports: ['6379:6379'],
       environment: {},
       volumes: ['redis_data:/data'],
-      restart: 'unless-stopped',
-    },
-  },
-  {
-    id: 'mongodb',
-    name: 'MongoDB',
-    icon: 'Database',
-    description: 'MongoDB NoSQL database',
-    config: {
-      name: 'mongodb',
-      image: 'mongo:7',
-      ports: ['27017:27017'],
-      environment: {
-        MONGO_INITDB_ROOT_USERNAME: 'root',
-        MONGO_INITDB_ROOT_PASSWORD: 'root',
-      },
-      volumes: ['mongo_data:/data/db'],
       restart: 'unless-stopped',
     },
   },

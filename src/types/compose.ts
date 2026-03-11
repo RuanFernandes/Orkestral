@@ -72,3 +72,27 @@ export interface WorkflowState {
   nodePositions: Record<string, NodePosition>;
   version: string;
 }
+
+// tipos do Docker Hub API
+export interface DockerHubRepository {
+  name: string;
+  namespace: string;
+  description?: string;
+  pull_count?: number;
+  star_count?: number;
+  is_official?: boolean;
+}
+
+export interface DockerHubSearchResponse {
+  count: number;
+  results: DockerHubRepository[];
+}
+
+export interface DockerImageTag {
+  name: string;
+  last_updated?: string;
+  images?: Array<{
+    architecture: string;
+    os: string;
+  }>;
+}

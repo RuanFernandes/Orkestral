@@ -22,6 +22,7 @@ import { Plus, X } from "lucide-react";
 import { useComposeStore } from "@/store/composeStore";
 import { useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
+import { DockerImageAutocomplete } from "./DockerImageAutocomplete";
 
 export function ServiceEditor() {
   const t = useTranslations();
@@ -213,16 +214,12 @@ export function ServiceEditor() {
                 <FormLabel fontSize={{ base: "xs", md: "sm" }} color="gray.400">
                   {t("image")}
                 </FormLabel>
-                <Input
+                <DockerImageAutocomplete
                   value={formData.image}
-                  onChange={(e) =>
-                    setFormData({ ...formData, image: e.target.value })
+                  onChange={(newImage) =>
+                    setFormData({ ...formData, image: newImage })
                   }
                   placeholder="node:20-alpine"
-                  bg="#111827"
-                  border="1px solid"
-                  borderColor="#2d3748"
-                  _hover={{ borderColor: "#3b82f6" }}
                 />
               </FormControl>
             </VStack>
